@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Situs Kelas</title>
+  <style>
+    /* Reset and base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+      /* Membuat scroll halaman menjadi halus saat klik menu */
+    html {
+      scroll-behavior: smooth;
+    }
+   /* Gaya dasar untuk body */ 
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f4f8;
+      color: #333;
+    }
+
+    /* Navbar  */
+    nav {
+      position: sticky;
+      top: 0;
+      background: linear-gradient(90deg, #1e3a8a, #2563eb);
+      display: flex;
+      align-items: center;
+      padding: 1rem 2rem;
+      box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
+      z-index: 1000;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      font-size: 1.75rem;
+      color: white;
+      user-select: none;
+      letter-spacing: 1.2px;
+      cursor: default;
+    }
+
+    .logo img {
+      height: 30px;
+      margin-right: 10px;
+    }
+    /* Menu navigasi */ 
+    ul.nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.75rem;
+      margin-left: auto;
+    }
+
+    ul.nav-links li a {
+      color: #e0e7ff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+
+    ul.nav-links li a:hover {
+      background: rgba(224, 231, 255, 0.3);
+    }
+  /* === daftar tugas=== */
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    h1, h2, p {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+   /* Section Beranda */
+    #beranda {
+      text-align: center;
+      max-width: 95%;
+      background-color: #2563eb;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 30px auto;
+      box-shadow: 0 0 10px black;
+    }
+ /* === KARTU TUGAS === */
+    .task-card {
+      display: flex;
+      background: rgb(40, 169, 192);
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+
+    .task-card img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+    }
+
+    .task-content {
+      padding: 1rem;
+    }
+
+    .task-title {
+      font-weight: bold;
+      color: #1d4ed8;
+      margin-bottom: 0.5rem;
+    }
+
+    .task-desc {
+      color: #d9e0dd;
+      font-size: 0.95rem;
+    }
+ /* === STRUKTUR ORGANISASI === */
+    .piket-container {
+      max-width: 1200px;
+      margin: 0 auto 3rem auto;
+      padding: 1rem;
+    }
+
+    .piket-heading {
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-bottom: 2rem;
+    }
+/* === JADWAL PIKET GRID === */
+    .piket-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+
+    .piket-card {
+      background: rgb(255, 0, 200);
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+    }
+
+    .piket-card h3 {
+      color: #f3df00;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .piket-card ul {
+      list-style: none;
+      padding-left: 0;
+      font-size: 0.95rem;
+    }
+
+    .piket-card ul li {
+      padding: 0.25rem 0;
+      border-bottom: 1px solid #eee;
+    }
+    @media (max-width: 768px) {
+      nav {
+        padding: 0.75rem 1rem;
+      }
+
+    footer {
+      background: #1f1f1f;
+      color: white;
+      padding: 2rem 1rem;
+    }
+   /* === RESPONSIF UNTUK LAYAR KECIL === */
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        padding: 0.75rem 1rem;
+      }
+      .logo {
+        font-size: 1.4rem;
+      }
+      ul.nav-links {
+        gap: 1.2rem;
+      }
+      ul.nav-links li a {
+        padding: 0.4rem 0.7rem;
+        font-size: 0.9rem;
+      }
+      .task-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .task-card img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+      <!-- === NAVBAR UTAMA === -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="MOXELGA.png" alt="logo"/>
+      MOXELGA
+    </div>
+    <ul class="nav-links">
+      <li><a href="#beranda">Beranda</a></li>
+      <li><a href="#tugas">Info Tugas</a></li>
+      <li><a href="#struktur">Struktur Kelas</a></li>
+      <li><a href="#piket">Jadwal Piket</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- Beranda -->
+    <section id="beranda">
+      <h1>Selamat datang di website kelas kami</h1>
+      <p>Hai teman-teman, guru, dan semua pengunjung!<br>
+      Website ini berisi informasi penting seputar kegiatan kelas, tugas, struktur organisasi, dan jadwal piket. Semoga bermanfaat!</p>
+    </section>
+
+    <!-- Tugas -->
+    <h2 id="tugas">Daftar Tugas Kelas</h2>
+    <div class="task-card">
+      <img src="infografis.png" alt="poster">
+      <div class="task-content">
+        <div class="task-title">Tugas 1: Desain Poster</div>
+        <div class="task-desc">Buat Poster promosi kegiatan sekolah menggunakan Canva atau Photoshop</div>  
+      </div>
+    </div> 
+
+    <!-- Satu kartu tugas -->
+    <div class="task-card">
+      <img src="artikel opini.png" alt="Opini">
+      <div class="task-content">
+        <div class="task-title">Tugas 2: Artikel Opini</div>
+        <div class="task-desc">Tulis artikel opini minimal 300 kata tentang isu sosial di sekitar.</div>
+      </div>
+    </div>
+
+    <div class="task-card">
+      <img src="video presentasi.jpg" alt="Video">
+      <div class="task-content">
+        <div class="task-title">Tugas 3: Video Presentasi</div>
+        <div class="task-desc">Rekam presentasi tentang materi pelajaran IPAS dan upload ke YouTube (privat).</div>
+      </div>
+    </div>
+
+    <div class="task-card">
+      <img src="resume buku.png" alt="Resume">
+      <div class="task-content">
+        <div class="task-title">Tugas 4: Resume Buku</div>
+        <div class="task-desc">Buat rangkuman dari buku fiksi atau non-fiksi favorit kalian dalam 1 halaman.</div>
+      </div>
+    </div>
+
+    <div class="task-card">
+      <img src="desain poster.png" alt="Infografis">
+      <div class="task-content">
+        <div class="task-title">Tugas 5: Infografis</div>
+        <div class="task-desc">Desain infografis bertema “Bahaya Sampah Plastik” dan kirim via Google Drive.</div>
+      </div>
+    </div>
+
+    <!-- Struktur Kelas organisasi -->
+    <h2 id="struktur">Struktur Organisasi Kelas</h2>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 2rem; margin-bottom: 3rem;">
+      <div style="text-align: center;">
+        <img src="foto ketua kelas.jpg" alt="Ketua" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;">
+        <div style="font-weight: bold; margin-top: 0.5rem;">Ketua Kelas</div>
+        <div>Akira Saskara</div>
+      </div>
+
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+        <div style="text-align: center;">
+          <img src="foto wakil kelas.jpg" alt="Wakil" style="width: 90px; height: 90px; border-radius: 50%; object-fit: cover;">
+          <div style="font-weight: bold; margin-top: 0.5rem;">Wakil Kelas</div>
+          <div>Fattan Arifudin</div>
+        </div>
+        <div style="text-align: center;">
+          <img src="foto bendahara kelas.jpg" alt="Bendahara" style="width: 90px; height: 90px; border-radius: 50%; object-fit: cover;">
+          <div style="font-weight: bold; margin-top: 0.5rem;">Bendahara Kelas</div>
+          <div>Fidel Sama Nia</div>
+        </div>
+        <div style="text-align: center;">
+          <img src="footo sekretaris kelas.jpg" alt="Sekretaris" style="width: 90px; height: 90px; border-radius: 50%; object-fit: cover;">
+          <div style="font-weight: bold; margin-top: 0.5rem;">Sekretaris</div>
+          <div>Kkkendraa</div>
+        </div>
+        <div style="text-align: center;">
+          <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Kebersihan" style="width: 90px; height: 90px; border-radius: 50%; object-fit: cover;">
+          <div style="font-weight: bold; margin-top: 0.5rem;">Kebersihan</div>
+          <div>Muza</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Jadwal Piket -->
+   <h2 id="piket" class="piket-heading">Jadwal Piket Mingguan</h2>
+  <div class="piket-container">
+    <div class="piket-grid">
+      <div class="piket-card"><h3>Senin</h3><ul><li>Andi Saputra</li><li>Budi Santoso</li><li>Citra Lestari</li><li>Dina Mawar</li><li>Eko Prasetyo</li></ul></div>
+      <div class="piket-card"><h3>Selasa</h3><ul><li>Fajar Hidayat</li><li>Gina Kartika</li><li>Hendra Wijaya</li><li>Intan Permata</li><li>Joko Subagio</li></ul></div>
+      <div class="piket-card"><h3>Rabu</h3><ul><li>Kiki Rahma</li><li>Lina Amelia</li><li>Miko Satria</li><li>Nina Ayu</li><li>Oka Firman</li></ul></div>
+      <div class="piket-card"><h3>Kamis</h3><ul><li>Putu Aris</li><li>Qori Azhara</li><li>Rafi Pranata</li><li>Santi Dewi</li><li>Teguh Imam</li></ul></div>
+      <div class="piket-card"><h3>Jumat</h3><ul><li>Umi Zahra</li><li>Vino Aditya</li><li>Wulan Sari</li><li>Xena Putri</li><li>Yusuf Hadi</li></ul></div>
+    </div>
+  </div>
+</main>
+
+</main>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem;">
+      <div style="flex: 1; min-width: 220px;">
+        <h3 style="margin-bottom: 0.5rem;">Tentang Kami</h3>
+        <p style="text-align: left;">Kami adalah tim pengembang web yang berdedikasi untuk Kelas Anda.</p>
+      </div>
+      <div style="flex: 1; min-width: 220px;">
+        <h3 style="margin-bottom: 0.5rem;">Sosial Media</h3>
+        <ul style="list-style: none; padding: 0;">
+          <li><a href="#" style="color: white; text-decoration: none;">Facebook</a></li>
+          <li><a href="#" style="color: white; text-decoration: none;">Instagram</a></li>
+          <li><a href="#" style="color: white; text-decoration: none;">Twitter</a></li>
+          <li><a href="#" style="color: white; text-decoration: none;">LinkedIn</a></li>
+        </ul>
+      </div>
+      <div style="flex: 1; min-width: 220px;">
+        <h3 style="margin-bottom: 0.5rem;">Kontak</h3>
+        <p style="text-align: left;">Email: info@moklet.com</p>
+        <p style="text-align: left;">Telepon: (021) 101-1011</p>
+        <p style="text-align: left;">Alamat: Jl. Danau Ranau No. 1, Sawojajar Malang</p>
+      </div>
+    </div>
+    <p style="text-align: center; margin-top: 2rem; font-size: 0.9rem;">© 2025 Mokleters. All rights reserved.</p>
+  </footer>
+</body>
+</html>
